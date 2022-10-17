@@ -11,18 +11,18 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
         Map<String, List<String>> graph = GraphBuilder.getGraph();
-        String start = "Рига";
-        String end = "Одесса";
+        String start = "Самара";
+        String end = "Ярославль";
 
         System.out.println("--------------Breadth search first algorithm--------------");
-        BreadthFirstSearcher first = new BreadthFirstSearcher();
-        first.search(graph, start, end);
+        BreadthFirstSearcher breadthFirstSearcher = new BreadthFirstSearcher();
+        breadthFirstSearcher.search(graph, start, end);
         System.out.println("--------------Breadth search first algorithm--------------\n");
 
 
         System.out.println("--------------Depth search first algorithm--------------");
-        DepthFirstSearcher second = new DepthFirstSearcher();
-        second.search(graph, start, end);
+        DepthFirstSearcher depthFirstSearcher = new DepthFirstSearcher();
+        depthFirstSearcher.search(graph, start, end);
         System.out.println("--------------Depth search first algorithm--------------\n");
 
 
@@ -36,9 +36,6 @@ public class Main {
         iterateDepthSearcher.search(graph, start, end, 1, 5);
         System.out.println("--------------Iterate depth search algorithm--------------\n");
 
-
-        TwoWaysSearcher twoWaysSearcher = new TwoWaysSearcher();
-        twoWaysSearcher.search(graph, start, end, 1,  6);
 
 //        for (Map.Entry<String, List<String>> e: graph.entrySet()) {
 //            ArrayList<String> strings = new ArrayList<>();
